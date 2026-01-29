@@ -1,15 +1,20 @@
 import { useState } from "react";
 import styles from "./App.module.css";
+import img1 from './assets/img1.jpg';
+import img2 from './assets/img2.jpg';
+import img3 from './assets/img3.jpg';
+import img4 from './assets/img4.jpg';
+
 
 export default function App() {
   const [menuOpen, setMenuOpen] = useState(false);
 
-  const articles = [
-    { id: 1, title: "Redesigning my site increased sales by over 400% in one week.", image: "/images/img1.jpg" },
-    { id: 2, title: "Design handoff: What engineers really want to see", image: "/images/img2.jpg" },
-    { id: 3, title: "A comprehensive list of human-computer interactions", image: "/images/img3.jpg" },
-    { id: 4, title: "Why do people hate redesigns?", image: "/images/img4.jpg" },
-  ];
+ const articles = [
+  { id: 1, title: "Redesigning my site increased sales by over 400% in one week.", image: img1 },
+  { id: 2, title: "Design handoff: What engineers really want to see", image: img2 },
+  { id: 3, title: "A comprehensive list of human-computer interactions", image: img3 },
+  { id: 4, title: "Why do people hate redesigns?", image: img4 },
+];
 
   return (
     <div className={styles.wrapper}>
@@ -23,6 +28,17 @@ export default function App() {
           <a href="#">About</a>
           <a href="#">Contact</a>
         </nav>
+
+    
+  <div>
+    {articles.map(article => (
+      <div key={article.id}>
+        <h3>{article.title}</h3>
+        <img src={article.image} alt={article.title} />
+      </div>
+    ))}
+  </div>
+
 
         <div className={styles.auth}>
           <button className={`${styles.btn} ${styles.login}`}>Log In</button>

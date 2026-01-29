@@ -29,17 +29,6 @@ export default function App() {
           <a href="#">Contact</a>
         </nav>
 
-    
-  <div>
-    {articles.map(article => (
-      <div key={article.id}>
-        <h3>{article.title}</h3>
-        <img src={article.image} alt={article.title} />
-      </div>
-    ))}
-  </div>
-
-
         <div className={styles.auth}>
           <button className={`${styles.btn} ${styles.login}`}>Log In</button>
           <button className={`${styles.btn} ${styles.trial}`}>Start Free Trial</button>
